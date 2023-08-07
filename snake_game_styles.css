@@ -1,0 +1,152 @@
+    body {
+      background-color: var(--background-color);
+    }
+    #snakeboard {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: var(--snakeboard-background);
+      border: 10px solid var(--snakeboard-border);
+      box-shadow: 8px 8px 16px var(--snakeboard-shadow-dark), -8px -8px 16px var(--snakeboard-shadow-light);
+    }
+    #score {
+      text-align: center;
+      font-size: 140px;
+      color: var(--snakeboard-background);
+      text-shadow: 4px 4px 8px var(--snakeboard-shadow-dark);
+    }
+    #game-over {
+      text-align: center;
+      color: var(--snakeboard-background);
+      text-shadow: 2px 2px 4px var(--snakeboard-shadow-dark);
+    }
+    #welcome-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: var(--snakeboard-background);
+      font-size: 36px;
+      z-index: 999;
+      text-shadow: 2px 2px 4px var(--snakeboard-shadow-dark);
+    }
+    #welcome-text {
+      font-size: 48px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    #play-text {
+      font-size: 24px;
+    }
+    /* Add asymmetrical layout for the game over screen */
+    #game-over {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 36px;
+      z-index: 999;
+    }
+    #game-over-content {
+      max-width: 400px;
+      text-align: center;
+    }
+    #game-over h2 {
+      font-size: 48px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    #game-over p {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+    #game-over button {
+      font-size: 24px;
+      padding: 10px 20px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    #game-over button:hover {
+      background-color: #45a049;
+    }
+    .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    }
+
+    .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    }
+
+    /* Rounded slider */
+    .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+    }
+
+    .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+    }
+
+    input:checked + .slider {
+    background-color: #2196F3;
+    }
+
+    input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+    }
+
+    input:checked + .slider:before {
+    transform: translateX(26px);
+    }
+
+    /* Rounded sliders ends here */
+
+    /* Add the level selection buttons to the welcome-overlay */
+    #level-selection button {
+      font-size: 20px;
+      padding: 8px 16px;
+      margin: 4px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }

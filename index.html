@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snake Game</title>
+  <link rel="stylesheet" href="snake_game_styles.css">
+</head>
+
+<body>
+  <div id="score">0</div>
+  <div id="current-score">Current Score: 0</div>
+  <div id="high-score">High Score: 0</div>
+  <canvas id="snakeboard" width="400" height="400"></canvas>
+  <div id="game-over" style="display: none;">
+    <div id="game-over-content">
+      <h2>Game Over!</h2>
+      <p>Your final score: <span id="final-score">0</span></p>
+      <button onclick="restartGame()">Restart</button>
+    </div>
+  </div>
+  <!-- Add the level selection menu to the welcome overlay -->
+  <div id="welcome-overlay">
+    <div id="welcome-text">Welcome to Snake</div>
+    <!-- Add the level indicator element -->
+    <div id="level-indicator">Level 1</div>
+    <div id="level-selection">
+      <button onclick="selectLevel('easy')">Easy</button>
+      <button onclick="selectLevel('medium')">Medium</button>
+      <button onclick="selectLevel('hard')">Hard</button>
+    </div>
+    <div id="play-text">Press Space to Play</div>
+    <div id="wall-collision-switch">
+      <label class="switch">
+        <input type="checkbox" id="wall-collision-toggle" onclick="toggleWallCollision()">
+        <span class="slider round"></span>
+      </label>
+      <span id="wall-collision-label">Wall Collision: On</span>
+    </div>
+  </div>
+
+  <div id="touch-controls">
+    <button onclick="moveLeft()">←</button>
+    <button onclick="moveRight()">→</button>
+    <button onclick="moveUp()">↑</button>
+    <button onclick="moveDown()">↓</button>
+  </div>
+  <audio id="game-over-sound" preload="auto">
+      <source src="2G7CF5V-gamers-fail-game.mp3" type="audio/mp3">
+      <!-- Add more <source> elements with different audio formats for cross-browser compatibility -->
+      <!-- For example: <source src="path/to/your/sound-effect.ogg" type="audio/ogg"> -->
+    </audio>
+    <script src="snake_game_scripts.js"></script>
+</body>
+</html>
