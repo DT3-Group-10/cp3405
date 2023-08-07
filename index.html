@@ -4,10 +4,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Snake Game</title>
   <link rel="stylesheet" href="snake_game_styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
 </head>
 
 <body>
   <div id="score">0</div>
+    <div id="score" class="ripple-score">0</div>
+  </div>  
   <div id="current-score">Current Score: 0</div>
   <div id="high-score">High Score: 0</div>
   <canvas id="snakeboard" width="400" height="400"></canvas>
@@ -20,7 +23,12 @@
   </div>
   <!-- Add the level selection menu to the welcome overlay -->
   <div id="welcome-overlay">
-    <div id="welcome-text">Welcome to Snake</div>
+    <div id="welcome-text">PYXEL PYTHON</div>
+    <!-- Start Button-->
+    <div id="start-container">
+      <button id="start-button" onclick="startGame()">Start</button>
+    </div>
+    
     <!-- Add the level indicator element -->
     <div id="level-indicator">Level 1</div>
     <div id="level-selection">
@@ -39,11 +47,11 @@
   </div>
 
   <div id="touch-controls">
-    <button onclick="moveLeft()">←</button>
-    <button onclick="moveRight()">→</button>
-    <button onclick="moveUp()">↑</button>
-    <button onclick="moveDown()">↓</button>
-  </div>
+    <button id="moveLeftBtn" onclick="moveLeft()">←</button>
+    <button id="moveRightBtn" onclick="moveRight()">→</button>
+    <button id="moveUpBtn" onclick="moveUp()">↑</button>
+    <button id="moveDownBtn" onclick="moveDown()">↓</button>
+  </div>  
   <audio id="game-over-sound" preload="auto">
       <source src="2G7CF5V-gamers-fail-game.mp3" type="audio/mp3">
       <!-- Add more <source> elements with different audio formats for cross-browser compatibility -->

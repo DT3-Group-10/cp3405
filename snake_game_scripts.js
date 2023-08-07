@@ -75,6 +75,9 @@
 
     function startGame() {
       gameStarted = true;
+      // Hide welcome overlay, start button, and other welcome elements
+      document.getElementById('welcome-overlay').style.display = 'none';
+      document.getElementById('start-container').style.display = 'none';
       document.getElementById('welcome-overlay').style.display = 'none';
       document.getElementById('current-score').innerHTML = "Current Score: 0";
       document.getElementById('high-score').innerHTML = "High Score: " + highScore;
@@ -231,8 +234,6 @@
 
       return false;
     }
-
-
 
     function random_food(min, max) {
       return Math.round((Math.random() * (max - min) + min) / 10) * 10;
@@ -408,3 +409,58 @@ function has_hit_wall() {
     snake[0].y < 0 || snake[0].y >= snakeboard.height
   );
 }
+
+// Add an event listener to the document to detect key presses
+document.addEventListener('keydown', function(event) {
+  let buttonToClick = null;
+  
+  switch (event.key) {
+    case 'w':
+      buttonToClick = document.getElementById('moveUpBtn');
+      break;
+    case 'a':
+      buttonToClick = document.getElementById('moveLeftBtn');
+      break;
+    case 's':
+      buttonToClick = document.getElementById('moveDownBtn');
+      break;
+    case 'd':
+      buttonToClick = document.getElementById('moveRightBtn');
+      break;
+    default:
+      break;
+  }
+  
+  if (buttonToClick) {
+    buttonToClick.classList.add('pressed'); // Apply the press animation class
+    buttonToClick.click(); // Simulate button click
+  }
+});
+
+let lastDirectionPressed = "right"; // Initialize with a default direction
+
+// Add an event listener to the document to detect key releases
+document.addEventListener('keyup', function(event) {
+  let buttonToRelease = null;
+  
+  switch (event.key) {
+    case 'w':
+      buttonToRelease = document.getElementById('moveUpBtn');
+      break;
+    case 'a':
+      buttonToRelease = document.getElementById('moveLeftBtn');
+      break;
+    case 's':
+      buttonToRelease = document.getElementById('moveDownBtn');
+      break;
+    case 'd':
+      buttonToRelease = document.getElementById('moveRightBtn');
+      break;
+    default:
+      break;
+  }
+  
+  if (buttonToRelease) {
+    buttonToRelease.classList.remove('pressed'); // Remove the press animation class
+  }
+});
