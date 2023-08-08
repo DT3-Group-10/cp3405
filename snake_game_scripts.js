@@ -136,18 +136,23 @@
     }
 
     function togglePauseGame() {
-  if (!gameStarted || has_game_ended()) return; // Check if the game hasn't started or has ended
-
-  gamePaused = !gamePaused;
-  if (gamePaused) {
-    document.getElementById('welcome-text').innerText = "Paused";
-    document.getElementById('play-text').innerText = "Press Esc to Continue";
-    document.getElementById('welcome-overlay').style.display = 'flex';
-  } else {
-    document.getElementById('welcome-overlay').style.display = 'none';
-    main();
-  }
-}
+      if (!gameStarted || has_game_ended()) return; // Check if the game hasn't started or has ended
+        
+      gamePaused = !gamePaused;
+        
+      // Hide or show the "Wall Collision" switch and label based on the game state
+      const wallCollisionSwitch = document.getElementById('wall-collision-switch');
+      wallCollisionSwitch.style.display = gamePaused ? 'none' : 'block';
+    
+      if (gamePaused) {
+        document.getElementById('welcome-text').innerText = "Paused";
+        document.getElementById('play-text').innerText = "Press Esc to Continue";
+        document.getElementById('welcome-overlay').style.display = 'flex';
+      } else {
+        document.getElementById('welcome-overlay').style.display = 'none';
+        main();
+      }
+    }                
 
   // Define the levels and their parameters
   const levels = [
