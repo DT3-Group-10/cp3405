@@ -1,21 +1,38 @@
     body {
       background-color: var(--background-color);
     }
+
     #snakeboard {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      margin-bottom: 100px; /* Create space between the snake board and controls */
+      max-width: 100%; /* Ensure the canvas doesn't exceed its container's width */
+      max-height: 100vh; /* Ensure the canvas doesn't exceed the viewport height */
+      width: auto; /* Let the canvas scale its width based on its container */
+      height: auto; /* Let the canvas scale its height based on its container */
       background-color: var(--snakeboard-background);
       border: 10px solid var(--snakeboard-border);
       box-shadow: 8px 8px 16px var(--snakeboard-shadow-dark), -8px -8px 16px var(--snakeboard-shadow-light);
+      margin: 0 auto; /* Center the game board horizontally */
     }
+    
     #score {
-      text-align: center;
-      font-size: 140px;
-      color: var(--snakeboard-background);
+      font-size: 100px;
+      color: #00ff00;
       text-shadow: 4px 4px 8px var(--snakeboard-shadow-dark);
+      text-align: center;
+      margin: 0; /* Remove default margin */
     }
+    
+    #high-score {
+      font-size: 25px;
+      color: #00ff00;
+      text-shadow: 1px 1px 1px var(--snakeboard-shadow-dark);
+      text-align: center;
+      margin: 10px 0 0; /* Adjust the top margin */
+    }      
     
     #game-over {
       text-align: center;
@@ -66,8 +83,8 @@
     }
     
     #welcome-text {
-      font-family: 'Press Start 2P', cursive;
-      font-size: 36px; /* Adjust the font size as needed */
+      font-family: 'Press Start 2P', cursive, sans-serif;
+      font-size: 30px; /* Adjust the font size as needed */
       color: #00ff00; /* Set the initial text color */
       animation: levitate 2s ease-in-out infinite, pulse 2s ease-in-out infinite, glow 2s ease-in-out infinite;
     }
@@ -193,6 +210,7 @@
     /* Add the level selection buttons to the welcome-overlay */
     #level-selection button {
       font-size: 20px;
+      font-family: 'Press Start 2P', cursive, sans-serif;
       padding: 8px 16px;
       margin: 4px;
       background-color: #4caf50;
@@ -203,19 +221,20 @@
     }
     #touch-controls {
       position: absolute;
-      bottom: 10px; /* Move the buttons slightly higher */
+      bottom: 10px;
       left: 50%;
       transform: translateX(-50%);
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-gap: 5px; /* Reduce the gap between buttons */
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 5px;
       align-items: center;
+      max-width: 200px; /* Limit the width of the touch controls */
     }
     
     #touch-controls button {
       font-size: 24px;
-      width: 50px; /* Slightly reduce the button width */
-      height: 50px; /* Slightly reduce the button height */
+      width: 50px;
+      height: 50px;
       background-color: #eee;
       border: none;
       border-radius: 50%;
@@ -251,4 +270,36 @@
       grid-column: 2;
       grid-row: 3;
     }
+    @media (max-width: 768px) {
+      #welcome-text {
+        font-size: 24px; /* Adjust the font size for smaller screens */
+      }
     
+      #level-indicator {
+        font-size: 18px; /* Adjust the font size for smaller screens */
+      }
+    
+      #level-selection button {
+        font-size: 16px; /* Adjust the font size for smaller screens */
+      }
+    
+      #play-text {
+        font-size: 20px; /* Adjust the font size for smaller screens */
+      }
+    
+      #wall-collision-label {
+        font-size: 25px; /* Adjust the font size for smaller screens */
+      }
+    }
+    /* Example styling for a player indicator */
+    .player-indicator {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 5px;
+      padding: 5px 10px;
+      font-family: 'Press Start 2P', sans-serif;
+      font-size: 14px;
+      color: #333;
+    }

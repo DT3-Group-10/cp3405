@@ -1,6 +1,32 @@
+    // Initialize Socket.io
+    const socket = io();
+    // Example: Sending player movement to the server
+    function sendMove(direction) {
+      socket.emit('move', direction);
+    }
+
+    // Example: Handling movement updates from the server
+    socket.on('move', (data) => {
+      // Update the position of the player with data.playerId
+      // and the new direction data.direction
+    });
+
+    // Example: Handling player disconnection
+    socket.on('playerDisconnected', (playerId) => {
+      // Remove the disconnected player from your game
+    });
     let powerApple_x;
     let powerApple_y;
-
+    const backgroundMusic = document.getElementById("background-music");
+    // Function to start playing the background music
+    function playBackgroundMusic() {
+      backgroundMusic.play();
+    }
+    // Function to stop playing the background music
+    function stopBackgroundMusic() {
+      backgroundMusic.pause();
+      backgroundMusic.currentTime = 0;
+    }
     // Check the browser appearance (light/dark mode) and set the CSS variables accordingly
     const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
     function setDarkModePreference() {
@@ -75,11 +101,11 @@
 
     function startGame() {
       gameStarted = true;
+      playBackgroundMusic(); // Start playing the music
       // Hide welcome overlay, start button, and other welcome elements
       document.getElementById('welcome-overlay').style.display = 'none';
       document.getElementById('start-container').style.display = 'none';
       document.getElementById('welcome-overlay').style.display = 'none';
-      document.getElementById('current-score').innerHTML = "Current Score: 0";
       document.getElementById('high-score').innerHTML = "High Score: " + highScore;
       score = 0;
       dx = 10;
@@ -93,7 +119,6 @@
         { x: 160, y: 200 }
       ];
       gen_food();
-      gen_power_apple(); // Generate the initial power apple
       document.getElementById('score').innerHTML = score;
       selectLevel('easy'); // Default to Easy level
       main();
@@ -123,7 +148,6 @@
         gen_food();
         gen_power_apple();
         document.getElementById('score').innerHTML = score;
-        document.getElementById('current-score').innerHTML = "Current Score: " + score;
         document.getElementById('high-score').innerHTML = "High Score: " + highScore;
         // Start the game loop for the new level
         main();
@@ -180,7 +204,6 @@
       changing_direction = false;
       setTimeout(function onTick() {
         clear_board();
-        drawPowerApple();
         drawFood();
         move_snake();
         drawSnake();
@@ -205,13 +228,6 @@
       snakeboard_ctx.strokestyle = 'darkgreen';
       snakeboard_ctx.fillRect(food_x, food_y, 10, 10);
       snakeboard_ctx.strokeRect(food_x, food_y, 10, 10);
-    }
-
-    function drawPowerApple() {
-      snakeboard_ctx.fillStyle = 'purple';
-      snakeboard_ctx.strokestyle = 'darkpurple';
-      snakeboard_ctx.fillRect(powerApple_x, powerApple_y, 10, 10);
-      snakeboard_ctx.strokeRect(powerApple_x, powerApple_y, 10, 10);
     }
 
     function drawSnakePart(snakePart) {
@@ -252,16 +268,7 @@
         if (has_eaten) gen_food();
       });
     }
-
-    function gen_power_apple() {
-      powerApple_x = random_food(0, snakeboard.width - 10);
-      powerApple_y = random_food(0, snakeboard.height - 10);
-      snake.forEach(function has_snake_eaten_power_apple(part) {
-        const has_eaten = part.x === powerApple_x && part.y === powerApple_y;
-        if (has_eaten) gen_power_apple();
-      });
-    }
-
+    
     function change_direction(event) {
       const LEFT_KEY = 37;
       const RIGHT_KEY = 39;
@@ -307,23 +314,16 @@
       snake.unshift(head);
 
       const has_eaten_food = snake[0].x === food_x && snake[0].y === food_y;
-      const has_eaten_power_apple = snake[0].x === powerApple_x && snake[0].y === powerApple_y;
 
       if (has_eaten_food) {
-        score += 10;
+        score += 1;
         document.getElementById('score').innerHTML = score;
-        document.getElementById('current-score').innerHTML = "Current Score: " + score;
         if (score > highScore) {
           highScore = score;
           localStorage.setItem('highScore', highScore);
           document.getElementById('high-score').innerHTML = "High Score: " + highScore;
         }
         gen_food();
-      } else if (has_eaten_power_apple) {
-        score += 50; // Power Apple grants 50 points
-        document.getElementById('score').innerHTML = score;
-        document.getElementById('current-score').innerHTML = "Current Score: " + score;
-        gen_power_apple(); // Generate a new power apple
       } else {
         snake.pop();
       }
@@ -352,6 +352,7 @@
     }
 
     function showGameOver() {
+      stopBackgroundMusic(); // Stop the music
 // Display the "Game Over" screen (existing code)
 document.getElementById('game-over').style.display = 'block';
 document.getElementById('final-score').innerHTML = score;
