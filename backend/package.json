@@ -1,9 +1,28 @@
 {
-  "dependencies": {
-    "bcrypt": "^5.1.1",
-    "express": "^4.18.2",
-    "mongodb": "^5.8.1",
-    "mongoose": "^7.4.4",
-    "nodemon": "^3.0.1"
-  }
+	"dependencies": {
+		"bcrypt": "^5.1.1",
+		"express": "^4.18.2",
+		"mongodb": "^5.8.1",
+		"mongoose": "^7.4.4",
+		"nodemon": "^3.0.1"
+	},
+	"devDependencies": {
+		"jsdoc": "^4.0.2"
+	},
+	"scripts": {
+		"start": "node server.js",
+		"jsdoc": "jsdoc -c jsdoc.json"
+	},
+	"name": "backend",
+	"version": "1.0.0",
+	"description": "backend server for snake game, including DB, and game server",
+	"main": "server.js",
+	"keywords": [
+		"backend",
+		"server",
+		"MongoDB",
+		"socketio"
+	],
+	"author": "Group PA-7",
+	"license": "MIT"
 }
