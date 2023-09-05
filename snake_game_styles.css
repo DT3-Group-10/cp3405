@@ -14,7 +14,8 @@ body {
   height: auto; /* Let the canvas scale its height based on its container */
   background-color: var(--snakeboard-background);
   border: 10px solid var(--snakeboard-border);
-  box-shadow: 8px 8px 16px var(--snakeboard-shadow-dark), -8px -8px 16px var(--snakeboard-shadow-light);
+  box-shadow: 8px 8px 16px var(--snakeboard-shadow-dark),
+    -8px -8px 16px var(--snakeboard-shadow-light);
   margin: 0 auto; /* Center the game board horizontally */
 }
 
@@ -32,7 +33,7 @@ body {
   text-shadow: 1px 1px 1px var(--snakeboard-shadow-dark);
   text-align: center;
   margin: 10px 0 0; /* Adjust the top margin */
-}      
+}
 
 #game-over {
   text-align: center;
@@ -56,7 +57,8 @@ body {
   text-shadow: 2px 2px 4px var(--snakeboard-shadow-dark);
 }
 @keyframes levitate {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
@@ -65,7 +67,8 @@ body {
 }
 
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
   }
   50% {
@@ -74,7 +77,8 @@ body {
 }
 
 @keyframes glow {
-  0%, 100% {
+  0%,
+  100% {
     text-shadow: none;
   }
   50% {
@@ -83,10 +87,11 @@ body {
 }
 
 #welcome-text {
-  font-family: 'Press Start 2P', cursive, sans-serif;
+  font-family: "Press Start 2P", cursive, sans-serif;
   font-size: 30px; /* Adjust the font size as needed */
   color: #00ff00; /* Set the initial text color */
-  animation: levitate 2s ease-in-out infinite, pulse 2s ease-in-out infinite, glow 2s ease-in-out infinite;
+  animation: levitate 2s ease-in-out infinite, pulse 2s ease-in-out infinite,
+    glow 2s ease-in-out infinite;
 }
 
 #start-container {
@@ -156,53 +161,53 @@ body {
   background-color: #45a049;
 }
 .switch {
-position: relative;
-display: inline-block;
-width: 60px;
-height: 34px;
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
 }
 
 .switch input {
-opacity: 0;
-width: 0;
-height: 0;
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
 /* Rounded slider */
 .slider {
-position: absolute;
-cursor: pointer;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-background-color: #ccc;
-transition: 0.4s;
-border-radius: 34px;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
 }
 
 .slider:before {
-position: absolute;
-content: "";
-height: 26px;
-width: 26px;
-left: 4px;
-bottom: 4px;
-background-color: white;
-transition: 0.4s;
-border-radius: 50%;
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
 }
 
 input:checked + .slider {
-background-color: #2196F3;
+  background-color: #2196f3;
 }
 
 input:focus + .slider {
-box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #2196f3;
 }
 
 input:checked + .slider:before {
-transform: translateX(26px);
+  transform: translateX(26px);
 }
 
 /* Rounded sliders ends here */
@@ -210,7 +215,7 @@ transform: translateX(26px);
 /* Add the level selection buttons to the welcome-overlay */
 #level-selection button {
   font-size: 20px;
-  font-family: 'Press Start 2P', cursive, sans-serif;
+  font-family: "Press Start 2P", cursive, sans-serif;
   padding: 8px 16px;
   margin: 4px;
   background-color: #4caf50;
@@ -299,7 +304,7 @@ transform: translateX(26px);
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 5px;
   padding: 5px 10px;
-  font-family: 'Press Start 2P', sans-serif;
+  font-family: "Press Start 2P", sans-serif;
   font-size: 14px;
   color: #333;
 }
