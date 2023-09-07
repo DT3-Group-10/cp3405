@@ -2,9 +2,11 @@
  * Express JS API module - Check {@tutorial mongodb-express-api-tutorial} for examples of how to make API calls
  * @module express-api-server
  */
+const cors = require("cors");
 const express = require("express");
 const app = express();
 app.use(express.json());
+app.use(cors());
 const PORT = 3000;
 
 const bcrypt = require("bcrypt");
