@@ -11,13 +11,13 @@
 		"jsdoc": "^4.0.2"
 	},
 	"scripts": {
-		"start": "node server.js",
+		"start": "node db-server.js",
 		"jsdoc": "jsdoc -c jsdoc.json"
 	},
 	"name": "backend",
 	"version": "1.0.0",
 	"description": "backend server for snake game, including DB, and game server",
-	"main": "server.js",
+	"main": "db-server.js",
 	"keywords": [
 		"backend",
 		"server",

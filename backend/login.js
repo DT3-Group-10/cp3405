@@ -27,7 +27,7 @@ function login(e) {
 						"highScore",
 						JSON.stringify(data.data.highScore)
 					);
-					window.location.href = "../snake_game_v10.html";
+					window.location.href = "../frontend/index.html";
 					alert("Entering...");
 				} else {
 					alert("Login Failed!!!\n\n" + data.message);
