@@ -1,4 +1,5 @@
 # multiplayerSnake
-Code for multiplayer snake game with [socket.io tutorial](https://www.youtube.com/watch?v=ppcBIHv_ZPs) on the Traversy Media YouTube channel.
+Multiplayer Snake Game project for CP3405 - Design Thinking 3.
+Created by Group 7 of Practical A
 
-If you want to see how to deploy the game check out [this video](https://www.youtube.com/watch?v=M9RDYkFs-EQ)
+Made by using Javascript and HTML
