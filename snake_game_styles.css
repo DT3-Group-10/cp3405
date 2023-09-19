@@ -2,6 +2,28 @@ body {
   background-color: var(--background-color);
 }
 
+#multiplayer-button {
+  /* Copy the styles from #multiplayer-button here */
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+  font-family: "Press Start 2P", cursive, sans-serif; /* Add the font-family */
+}
+
+#multiplayer-button:hover {
+  /* Copy the styles from #multiplayer-button:hover here */
+  background-color: #45a049;
+}
+
 #snakeboard {
   position: absolute;
   top: 50%;
