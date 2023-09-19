@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <!-- Snake Game Documentation -->
-<!-- ## Introduction
+<!--  Introduction
 This is the documentation for the Snake Game, which is an HTML-based game implemented using JavaScript. The game allows the player to control a snake and navigate it to eat food and grow. The objective is to achieve the highest possible score without colliding with the walls or the snake's own body.
 
-## Files
+ Files
 The Snake Game consists of the following files:
 
 1. `snake_game_styles.css`: This file contains the CSS styles for the Snake Game.
@@ -11,124 +11,124 @@ The Snake Game consists of the following files:
 3. `resources/2G7CF5V-gamers-fail-game.mp3`: This is an audio file that plays when the game is over.
 4. `resources/Press_Start.mp3`: This is an audio file that plays in the background while playing the game.
 
-## HTML Structure
+ HTML Structure
 The Snake Game is implemented using HTML and has the following structure:
 
-### `<!DOCTYPE html>`
+ `<!DOCTYPE html>`
 This line declares the HTML document type.
 
-### `<html>`
+ `<html>`
 The root element of the HTML document.
 
-### `<head>`
+ `<head>`
 This section contains meta information and external resource references.
 
-### `<body>`
+ `<body>`
 The main content of the Snake Game.
 
-#### `<div id="score">`
+ `<div id="score">`
 This div displays the player's current score.
 
-#### `<div id="high-score">`
+ `<div id="high-score">`
 This div displays the highest score achieved.
 
-#### `<canvas id="snakeboard">`
+ `<canvas id="snakeboard">`
 This canvas element is used to draw the game board and the snake.
 
-#### `<div id="game-over">`
+ `<div id="game-over">`
 This div is displayed when the game is over.
 
-##### `<div id="game-over-content">`
+ `<div id="game-over-content">`
 This div contains the content of the game over message.
 
-###### `<h2>`
+ `<h2>`
 This heading displays the game over message.
 
-###### `<p>`
+ `<p>`
 This paragraph displays the player's final score.
 
-###### `<span id="final-score">`
+ `<span id="final-score">`
 This span displays the final score.
 
-###### `<button onclick="restartGame()">`
+ `<button onclick="restartGame()">`
 This button allows the player to restart the game.
 
-#### `<div id="welcome-overlay">`
+ `<div id="welcome-overlay">`
 This div is displayed at the start of the game.
 
-##### `<div id="welcome-text">`
+ `<div id="welcome-text">`
 This div displays the title of the game.
 
-##### `<div id="start-container">`
+ `<div id="start-container">`
 This div contains the start button.
 
-###### `<button id="start-button" onclick="startGame()">`
+ `<button id="start-button" onclick="startGame()">`
 This button starts the game when clicked.
 
-##### `<button id="multiplayer-button">`
+ `<button id="multiplayer-button">`
 This button opens a new tab with a multi-player game when clicked.
 
-###### `<a href="https://cp3405.pages.dev/" target="_blank">`
+ `<a href="https://cp3405.pages.dev/" target="_blank">`
 This anchor element creates a link to the multi-player game.
 
-##### `<div id="level-indicator">`
+ `<div id="level-indicator">`
 This div displays the current level.
 
-##### `<div id="level-selection">`
+ `<div id="level-selection">`
 This div contains the level selection buttons.
 
-###### `<button onclick="selectLevel('easy')">`
+ `<button onclick="selectLevel('easy')">`
 This button selects the easy level when clicked.
 
-###### `<button onclick="selectLevel('medium')">`
+ `<button onclick="selectLevel('medium')">`
 This button selects the medium level when clicked.
 
-###### `<button onclick="selectLevel('hard')">`
+ `<button onclick="selectLevel('hard')">`
 This button selects the hard level when clicked.
 
-##### `<div id="play-text">`
+ `<div id="play-text">`
 This div displays the instruction to press the spacebar to play.
 
-##### `<div id="wall-collision-switch">`
+ `<div id="wall-collision-switch">`
 This div contains the wall collision switch.
 
-###### `<input type="checkbox" id="wall-collision-toggle" onclick="toggleWallCollision()">`
+ `<input type="checkbox" id="wall-collision-toggle" onclick="toggleWallCollision()">`
 This checkbox allows the player to toggle wall collision on or off.
 
-###### `<span id="wall-collision-label">`
+ `<span id="wall-collision-label">`
 This span displays the current wall collision status.
 
-#### `<div id="touch-controls">`
+ `<div id="touch-controls">`
 This div contains the touch controls for mobile devices.
 
-##### `<button id="moveLeftBtn" onclick="moveLeft()">`
+ `<button id="moveLeftBtn" onclick="moveLeft()">`
 This button allows the player to move the snake to the left.
 
-##### `<button id="moveRightBtn" onclick="moveRight()">`
+ `<button id="moveRightBtn" onclick="moveRight()">`
 This button allows the player to move the snake to the right.
 
-##### `<button id="moveUpBtn" onclick="moveUp()">`
+ `<button id="moveUpBtn" onclick="moveUp()">`
 This button allows the player to move the snake upwards.
 
-##### `<button id="moveDownBtn" onclick="moveDown()">`
+ `<button id="moveDownBtn" onclick="moveDown()">`
 This button allows the player to move the snake downwards.
 
-#### `<audio id="game-over-sound">`
+ `<audio id="game-over-sound">`
 This audio element plays a sound effect when the game is over.
 
-##### `<source src="resources/2G7CF5V-gamers-fail-game.mp3" type="audio/mp3" />`
+ `<source src="resources/2G7CF5V-gamers-fail-game.mp3" type="audio/mp3" />`
 This source element specifies the audio file for the sound effect.
 
-#### `<audio id="background-music">`
+ `<audio id="background-music">`
 This audio element plays background music while playing the game.
 
-##### `<source src="resources/Press_Start.mp3" type="audio/mp3" />`
+ `<source src="resources/Press_Start.mp3" type="audio/mp3" />`
 This source element specifies the audio file for the background music.
 
-#### `<script src="snake_game_scripts.js"></script>`
+ `<script src="snake_game_scripts.js"></script>`
 This script element references the JavaScript code for the Snake Game.
 
-## Conclusion
+ Conclusion
 This documentation provides an overview of the structure and components of the Snake Game. The HTML code, CSS styles, and JavaScript code work together to create an interactive and enjoyable gaming experience. -->
 <html>
   <head>
@@ -203,12 +203,12 @@ This documentation provides an overview of the structure and components of the S
       <button id="moveDownBtn" onclick="moveDown()">↓</button>
     </div>
     <audio id="game-over-sound" preload="auto">
-      <source src="resources/2G7CF5V-gamers-fail-game.mp3" type="audio/mp3" />
+      <source src="resource/2G7CF5V-gamers-fail-game.mp3" type="audio/mp3" />
       <!-- Add more <source> elements with different audio formats for cross-browser compatibility -->
       <!-- For example: <source src="path/to/your/sound-effect.ogg" type="audio/ogg"> -->
     </audio>
     <audio id="background-music" preload="auto" loop>
-      <source src="resources/Press_Start.mp3" type="audio/mp3" />
+      <source src="resource/Press_Start.mp3" type="audio/mp3" />
       <!-- Add more <source> elements with different audio formats for cross-browser compatibility -->
     </audio>
     <script src="snake_game_scripts.js"></script>
