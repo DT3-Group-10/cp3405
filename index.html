@@ -1,28 +1,42 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<!-- saved from url=(0048)https://837ee652.multiplayersnakegame.pages.dev/ -->
+<html lang="en-us" style="color-scheme: light; --bg-color: #fff">
   <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-114106362-3"
-    ></script>
+    <script async="" src="./Multiplayer Snake_files/js"></script>
+    <!-- Google Analytics configuration script -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-
       gtag("config", "UA-114106362-3");
     </script>
 
     <title>Multiplayer Snake</title>
+    <!-- Meta tags -->
     <meta name="robots" content="noindex" />
-    <meta charset="utf-8" />
-    <meta name="description" content="CP3405's Web Games" />
-    <meta name="author" content="Preston Corless, SaveState" />
-    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+
+    <meta name="description" content="CP3405&#39;s Web Games" />
+    <meta name="author" content="KaungSithuLinn, KaungSithuLinn" />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://837ee652.multiplayersnakegame.pages.dev/resources/python_logo_pmu_icon.ico"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://837ee652.multiplayersnakegame.pages.dev/resources/python_logo_pmu_icon.ico"
+      sizes="16x16"
+    />
+
+    <!-- CSS Styles -->
     <style>
       canvas {
         padding: 0;
@@ -57,38 +71,75 @@
     </style>
   </head>
   <body>
-    <canvas id="canvas" width="100%" height="100%"
-      >Sorry, your browser doesn't support HTML5 Canvas! Choose a different
-      browser please!</canvas
-    >
+    <!-- Main game canvas -->
+    <canvas id="canvas" width="1440" height="768">
+      Sorry, your browser doesn't support HTML5 Canvas! Choose a different
+      browser please!
+    </canvas>
+
+    <!-- Settings menu -->
     <form id="menu" oninput="applySettings()">
       <h1>Settings</h1>
-      <p>Dark Mode:<input type="checkbox" id="darkBox" /></p>
       <p>
-        Tile Size: <span id="unitOut">24</span>px<input
-          type="range"
-          value="24"
-          min="1"
-          max="64"
-          id="unitBox"
-        />
+        Dark Mode:
+        <input type="checkbox" id="darkBox" />
       </p>
-      <p>Food Value: <input type="number" value="5" id="foodValBox" /></p>
-      <p>Amount of Food: <input type="number" value="3" id="foodAmtBox" /></p>
-      <p>Start Length: <input type="number" value="5" id="startScoreBox" /></p>
       <p>
-        Players Drop Food:<input type="checkbox" id="pFoodBox" checked="true" />
+        Tile Size: <span id="unitOut">24</span>px
+        <input type="range" value="24" min="1" max="64" id="unitBox" />
       </p>
-      <p>Loop through screen edge:<input type="checkbox" id="loopBox" /></p>
+      <p>
+        Food Value:
+        <input type="number" value="5" id="foodValBox" />
+      </p>
+      <p>
+        Amount of Food:
+        <input type="number" value="3" id="foodAmtBox" />
+      </p>
+      <p>
+        Start Length:
+        <input type="number" value="5" id="startScoreBox" />
+      </p>
+      <p>
+        Players Drop Food:
+        <input type="checkbox" id="pFoodBox" checked="true" />
+      </p>
+      <p>
+        Loop through screen edge:
+        <input type="checkbox" id="loopBox" />
+      </p>
       <div>
-        <input type="button" value="Resume" onclick="togglePause()" /><input
-          type="button"
-          value="Reset Options"
-          onclick="resetOptions()"
-        />
+        <input type="button" value="Resume" onclick="togglePause()" />
+        <input type="button" value="Reset Options" onclick="resetOptions()" />
       </div>
       <small>Ver 2.2</small>
     </form>
-    <script src="script.js"></script>
+    <!-- Javascript -->
+    <script src="./Multiplayer Snake_files/script.js.download"></script>
+
+    ```
+
+    <!-- The code contains HTML elements for the game canvas, settings menu, and necessary scripts.
+
+## CSS Styles
+
+The code includes some CSS styles for the game canvas and settings menu. The styles are defined in a `<style>` tag within the `<head>` section of the HTML.
+
+## Scripts
+
+The code includes several scripts that provide functionality for the game. These scripts are referenced using `<script>` tags at the end of the `<body>` section.
+
+- `gtag.js` is a script for Google Analytics.
+- `script.js` contains the main game logic and handles user interactions.
+
+## Settings Menu
+
+The game includes a settings menu that allows the user to customize various aspects of the game. The menu is defined using a `<form>` tag with the id "menu". It contains several input elements for different settings, such as dark mode, tile size, food value, amount of food, start length, player food dropping, and loop through screen edge.
+
+The settings menu also includes buttons to resume the game and reset the options.
+
+## Version
+
+The version of the game is mentioned at the bottom of the settings menu as `<small>Ver 2.2</small>`. -->
   </body>
 </html>
